@@ -1,0 +1,15 @@
+module github.com/yourusername/download-youtube-golang
+
+go 1.24.0
+
+toolchain go1.24.2
+
+require github.com/lrstanley/go-ytdlp v1.2.4
+
+require (
+	github.com/ProtonMail/go-crypto v1.3.0 // indirect
+	github.com/cloudflare/circl v1.6.1 // indirect
+	github.com/ulikunitz/xz v0.5.15 // indirect
+	golang.org/x/crypto v0.42.0 // indirect
+	golang.org/x/sys v0.36.0 // indirect
+)
