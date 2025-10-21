@@ -110,7 +110,7 @@ func main() {
 	}
 
 	// URL a descargar
-	url := "https://youtu.be/tujjT4ZhwuI?si=_0aEBhTgBcHDkpRK"
+	url := "https://music.youtube.com/watch?v=Em63ETIBf-0&si=uo2VvP6nKt_uOs0d"
 
 	// Crear carpeta music si no existe
 	if _, err := os.Stat("music"); os.IsNotExist(err) {
@@ -121,7 +121,8 @@ func main() {
 	cmd := exec.Command(ytDlpPath,
 		"-x", "--audio-format", "mp3",
 		"-o", "music/%(title)s.%(ext)s",
-		"--embed-thumbnail", // Agrega la foto del albun y artista
+		"--embed-thumbnail",           // Agrega la foto del albun y artista
+		"--convert-thumbnails", "jpg", // Convertir miniaturas a JPG para evitar problemas de incrustación de ffmpeg
 		url,
 	)
 	cmd.Stdout = os.Stdout
